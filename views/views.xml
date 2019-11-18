@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="action_customer_invoice_list">
+	        <field name="name">Customer Invoice.form</field>
+		    <field name="res_model">treasury.invoice_form</field>
+            <field name="inherit_id" ref="account.invoice_form" />
+        </record>
+    </data>
+</odoo>

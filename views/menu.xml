@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record id="action_customer_invoice_list" model="ir.actions.act_window">
+			<field name="name">Customer Invoice</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','out_invoice')]</field>
+		</record>
+
+        <record id="action_vendor_bill_list" model="ir.actions.act_window">
+			<field name="name">Vendor Bill</field>
+			<field name="res_model">account.invoice</field>
+			<field name="view_mode">tree,form</field>
+            <field name="domain">[('type','=','in_invoice')]</field>
+            <field name="context">{}</field>
+		</record>
+
+        <record id="action_cash_bank_list" model="ir.actions.act_window">
+			<field name="name">Cash Bank</field>
+			<field name="res_model">account.journal</field>
+			<field name="view_mode">kanban,form</field>
+            <field name="view_id" ref="account.account_journal_dashboard_kanban_view"/>
+            <field name="domain">[('type', 'in', ['bank', 'cash'])]</field>
+		</record>
+
+        <menuitem id="treasury_0"
+            name="Treasury"
+            sequence="20"/>
+        <menuitem id="menu_treasury_customer_invoice" 
+            name="Customer Invoice" 
+            parent="treasury_0" 
+            action="action_customer_invoice_list" 
+            sequence="20"/>
+        <menuitem id="menu_treasury_vendor_bill" 
+            name="Vendor Bill" 
+            parent="treasury_0" 
+            action="action_vendor_bill_list" 
+            sequence="20"/>
+        <menuitem id="menu_treasury_cash_bank" 
+            name="Cash Bank" 
+            parent="treasury_0" 
+            action="action_cash_bank_list" 
+            sequence="20"/>
+        
+    </data>
+</odoo>
