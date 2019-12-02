@@ -1,13 +1,13 @@
 <odoo>
     <data>
-        <record id="action_customer_invoice_list" model="ir.actions.act_window">
+        <record id="account.action_invoice_tree1" model="ir.actions.act_window">
 			<field name="name">Customer Invoice</field>
 			<field name="res_model">account.invoice</field>
 			<field name="view_mode">tree,form</field>
             <field name="domain">[('type','=','out_invoice')]</field>
 		</record>
 
-        <record id="action_vendor_bill_list" model="ir.actions.act_window">
+        <record id="account.action_invoice_tree2" model="ir.actions.act_window">
 			<field name="name">Vendor Bill</field>
 			<field name="res_model">account.invoice</field>
 			<field name="view_mode">tree,form</field>
@@ -29,12 +29,12 @@
         <menuitem id="menu_treasury_customer_invoice" 
             name="Customer Invoice" 
             parent="treasury_0" 
-            action="action_customer_invoice_list" 
+            action="account.action_invoice_tree1" 
             sequence="20"/>
         <menuitem id="menu_treasury_vendor_bill" 
             name="Vendor Bill" 
             parent="treasury_0" 
-            action="action_vendor_bill_list" 
+            action="account.action_invoice_tree2" 
             sequence="20"/>
         <menuitem id="menu_treasury_cash_bank" 
             name="Cash Bank" 
